@@ -1,6 +1,10 @@
+from django.shortcuts import make_toast
 from django.test import SimpleTestCase, override_settings
 from django.test.utils import require_jinja2
 
+class MakeToastTests(SimpleTestCase):
+    def test_make_toast(self):
+        self.assertEqual(make_toast(), "toast")
 
 @override_settings(ROOT_URLCONF="shortcuts.urls")
 class RenderTests(SimpleTestCase):
